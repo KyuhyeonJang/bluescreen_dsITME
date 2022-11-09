@@ -5,19 +5,12 @@ import pandas as pd
 import plotly.express as px
 from pathlib import Path
 from overcatch import OverCatch
-import sys, os
+# from io import BytesIO
 
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-FILE = Path(__file__).resolve()
-ROOT = FILE.parents[0]  # root directory
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))  # add ROOT to PATH
-ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
-
 # local path
-filepath = ROOT
-# 'C:/Python/repos_python/streamlit_bluescreen/bluescreen/'
+filepath ='C:/Python/repos_python/streamlit_bluescreen/bluescreen/'
 # colab path
 # filepath ='/content/streamlit_bluescreen/'
 
@@ -122,7 +115,7 @@ if len(st.session_state.resultdict) != 0:
     
     # 영상 띄우기
     # st.markdown("### Finished to detect OVERWATCH characters using YOLOv5")
-    fp = f"{filepath}/result/{str(Path(st.session_state.latestvideo).stem)}/{st.session_state.latestvideo}.mp4"
+    fp = f"{filepath}result/{str(Path(st.session_state.latestvideo).stem)}/{st.session_state.latestvideo}.mp4"
     # print("full file path : "+fp)
 
     st.markdown("<h1 style='text-align: center; color: grey;'>PLAY NOW 👇</h1>", unsafe_allow_html=True)

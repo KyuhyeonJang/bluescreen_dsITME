@@ -2,16 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from pathlib import Path
-import sys, os
-
-FILE = Path(__file__).resolve()
-ROOT = FILE.parents[1]  # root directory
-if str(ROOT) not in sys.path:
-    sys.path.append(str(ROOT))  # add ROOT to PATH
-ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 # local path
-filepath = ROOT
+filepath ='C:/Python/repos_python/streamlit_bluescreen/bluescreen/'
 # colab path
 # filepath ='/content/streamlit-gallery/'
 
@@ -107,8 +100,8 @@ def make_grid():
                 tab1, tab2, tab3 = st.tabs(["🎬 video", "📊 hack percent", "📉 distance chart"])
             
                 with tab1:
-                    video_file = open(f'{filepath}/result/{str(Path(keylist[keyindex]).stem)}/{keylist[keyindex]}', 'rb')
-                    #video_file = open(f'{filepath}/result/{str(os.path.splitext(keylist[keyindex])[0])}/{keylist[keyindex]}', 'rb')
+                    video_file = open(f'{filepath}result/{str(Path(keylist[keyindex]).stem)}/{keylist[keyindex]}', 'rb')
+                    #video_file = open(f'{filepath}result/{str(os.path.splitext(keylist[keyindex])[0])}/{keylist[keyindex]}', 'rb')
                     video_bytes = video_file.read()
                     st.video(video_bytes)
 
@@ -143,7 +136,7 @@ def make_grid():
                     tab4, tab5, tab6 = st.tabs(["🎬 video", "📊 hack percent", "📉 distance chart"])
             
                     with tab4:
-                        video_file = open(f'{filepath}/result/{str(Path(keylist[keyindex]).stem)}/{keylist[keyindex]}', 'rb')
+                        video_file = open(f'{filepath}result/{str(Path(keylist[keyindex]).stem)}/{keylist[keyindex]}', 'rb')
                         video_bytes = video_file.read()
                         st.video(video_bytes)
 
